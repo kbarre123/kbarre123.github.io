@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | My Blog]]></title>
   <link href="http://kbarre123.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-14T15:56:10-05:00</updated>
+  <updated>2014-04-14T16:09:57-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -18,7 +18,21 @@
     <link href="http://kbarre123.github.io/blog/2014/04/14/first-post/"/>
     <updated>2014-04-14T15:30:33-05:00</updated>
     <id>http://kbarre123.github.io/blog/2014/04/14/first-post</id>
-    <content type="html"><![CDATA[<p>Here is my first post using Octopress.</p>
+    <content type="html"><![CDATA[<p>
+    This is my first post using Octopress. I'm still trying to get the hang of it, as it's a little more involved than just using Wordpress or something like that. 
+</p>
+
+
+<p>
+    I chose Octopress because it offers some handy plugins. The one I forsee using the most is the inline code snippets. Let's try it out.
+</p>
+
+
+<pre><code>String myString = "I'm not used to using markdown."
+</code></pre>
+
+<p>There, that was easy.</p>
+
 ]]></content>
   </entry>
   
