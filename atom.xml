@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-15T10:26:23-05:00</updated>
+  <updated>2014-04-15T10:27:49-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -141,7 +141,7 @@ This is part of the same blockquote b/c I used two spaces after the first line.<
 <h2>YouTube Videos</h2>
 
 <p>These can&rsquo;t be added directly, but you can add an image with a link to the video like this:<br/>
-<a href="https://www.youtube.com/watch?v=dw2vg9xzb4w" target="blank"><img src="https://www.img.youtube.com/vi/dw2vg9xzb4w/hqdefault.jpg"></a></p>
+<a href="https://www.youtube.com/watch?v=dw2vg9xzb4w" target="blank"><img src="https://img.youtube.com/vi/dw2vg9xzb4w/hqdefault.jpg"></a></p>
 ]]></content>
   </entry>
   
