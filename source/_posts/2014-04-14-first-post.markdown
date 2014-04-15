@@ -89,6 +89,7 @@ Content Cell  | Content Cell -->
 
 ## Horizontal Rule
 Three or more hyphens, asterisks or underscores will do.
+
 ---
 ***
 ___
