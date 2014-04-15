@@ -9,7 +9,7 @@ categories: [General]
 This is my first post using Octopress. I'm still trying to get the hang of it, *and* I don't know markup well enough at the moment. So, let's give it a test-run.
 <!-- more -->
 
-I chose Octopress because it offers some handy plugins and its use of markdown. So, let's test it out.
+I chose Octopress because it offers some handy plugins and its use of Github Flavored Markdown (GFM). So, let's test it out.
 
 ## Headers
 Let's start with something easy.
@@ -93,7 +93,6 @@ Three or more hyphens, asterisks or underscores will do.
 ---
 ***
 ___
-
 
 ## YouTube Videos
 These can't be added directly, but you can add an image with a link to the video like this:  
