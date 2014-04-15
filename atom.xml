@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-15T10:29:17-05:00</updated>
+  <updated>2014-04-15T10:43:33-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -23,7 +23,7 @@
 <!-- more -->
 
 
-<p>I chose Octopress because it offers some handy plugins and its use of markdown. So, let&rsquo;s test it out.</p>
+<p>I chose Octopress because it offers some handy plugins and its use of Github Flavored Markdown (GFM). So, let&rsquo;s test it out.</p>
 
 <h2>Headers</h2>
 
