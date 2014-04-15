@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-15T10:27:49-05:00</updated>
+  <updated>2014-04-15T10:29:17-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -132,7 +132,9 @@ This is part of the same blockquote b/c I used two spaces after the first line.<
 
 <h2>Horizontal Rule</h2>
 
-<h2>Three or more hyphens, asterisks or underscores will do.</h2>
+<p>Three or more hyphens, asterisks or underscores will do.</p>
+
+<hr />
 
 <hr />
 
