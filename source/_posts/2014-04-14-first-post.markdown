@@ -94,6 +94,7 @@ Three or more hyphens, asterisks or underscores will do.
 ***
 ___
 
+
 ## YouTube Videos
 These can't be added directly, but you can add an image with a link to the video like this:  
 <a href="https://www.youtube.com/watch?v=dw2vg9xzb4w" target="blank"><img src="https://img.youtube.com/vi/dw2vg9xzb4w/hqdefault.jpg"></a>
