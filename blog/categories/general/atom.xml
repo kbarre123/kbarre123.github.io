@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | My Blog]]></title>
   <link href="http://kbarre123.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-14T16:28:35-05:00</updated>
+  <updated>2014-04-15T05:20:27-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -18,21 +18,63 @@
     <link href="http://kbarre123.github.io/blog/2014/04/14/first-post/"/>
     <updated>2014-04-14T15:30:33-05:00</updated>
     <id>http://kbarre123.github.io/blog/2014/04/14/first-post</id>
-    <content type="html"><![CDATA[<p>
-    This is my first post using Octopress. I'm still trying to get the hang of it, as it's a little more involved than just using Wordpress or something like that. 
-</p>
+    <content type="html"><![CDATA[<p>This is my first post using Octopress. I&rsquo;m still trying to get the hang of it, <em>and</em> I don&rsquo;t know markup well enough at the moment. So, let&rsquo;s give it a test-run.</p>
+
+<!-- more -->
 
 
-<p>
-    I chose Octopress because it offers some handy plugins. The one I forsee using the most is the inline code snippets. Let's try it out.
-</p>
+<p>I chose Octopress because it offers some handy plugins. The one I forsee using the most is the inline code snippets.</p>
 
-
-<pre><code>String myString = "I'm not used to using markdown."
+<pre><code>String myString = "I'm not used to using markdown and stuff."
 </code></pre>
 
-<p>There, that was easy.</p>
+<p>There, that was easy. Now, let&rsquo;s try adding headers:</p>
 
+<h1>h1</h1>
+
+<h2>h2</h2>
+
+<h3>h3</h3>
+
+<h4>h4</h4>
+
+<h5>h5</h5>
+
+<h6>h6</h6>
+
+<p>Now that we know how to use headers, let&rsquo;s put them to good use.</p>
+
+<h2>Emphasis</h2>
+
+<p>OK, what about <em>emphasis</em>? And <em>underscores</em>? Or <strong>strong emphasis</strong>? Or <strong><em>combined emphasis</em></strong>? I know, cool <del>story, bro</del>.</p>
+
+<h2>Lists</h2>
+
+<p>Let&rsquo;s make a list of things I&rsquo;d rather do that listen to Contemporary Christian music:</p>
+
+<ol>
+<li>Get castrated using a butter-knife.</li>
+<li>Just about anything, including:</li>
+<li>first item in unordered sub-list  <em>(this is supposed to be a ul li, but it won&rsquo;t work &ndash;___&ndash;)</em>
+
+<ul>
+<li>second item in unordered sub-list</li>
+<li>this doesn&rsquo;t seem to be working at all</li>
+</ul>
+</li>
+</ol>
+
+
+<h2>Links</h2>
+
+<p><a href="http://www.google.com">I&rsquo;m an inlike-style link</a><br>
+<a href="http://www.google.com" title="See, I told you.">I&rsquo;m an inlike-style link with a title; hover over me!</a></p>
+
+<h2>Images</h2>
+
+<p><img src="https://i.imgur.com/Jx8SJmu.jpg" title="lolerskates" alt="alt text" /></p>
+
+<p>//## Code and Syntax Highlighting</p>
 ]]></content>
   </entry>
   
