@@ -4,7 +4,7 @@
   <title><![CDATA[Category: General | kbarre123]]></title>
   <link href="http://kbarre123.github.io/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-04-15T10:43:33-05:00</updated>
+  <updated>2014-09-17T18:23:36-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -14,10 +14,24 @@
 
   
   <entry>
-    <title type="html"><![CDATA[First Post]]></title>
-    <link href="http://kbarre123.github.io/blog/2014/04/14/first-post/"/>
+    <title type="html"><![CDATA[Friends With Benefits]]></title>
+    <link href="http://kbarre123.github.io/blog/2014/09/17/friends-with-benefits/"/>
+    <updated>2014-09-17T17:30:22-05:00</updated>
+    <id>http://kbarre123.github.io/blog/2014/09/17/friends-with-benefits</id>
+    <content type="html"><![CDATA[<p>Well, it&rsquo;s been a while since my last post. Five months and three days to be exact. A lot has happened since then, so allow me to briefly recap.</p>
+
+<!-- more -->
+
+
+<p>After ending the Spring &lsquo;14 semester with a bang (straight A&rsquo;s, ya&rsquo;ll) I flew to New Hampshire to visit my good friend, Blake Amacker. Blake&rsquo;s a mechanical engineer by day; aspiring distillery-magnate by night. I flew up for a month to help with the construction of the building, website design for the budding business, and general debauchery. We had an absolute blast and pretty much stayed drunk the entire time he wasn&rsquo;t at work. Keep an eye out for <a href="http://coppercannon.com">Copper Cannon Distillery</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://kbarre123.github.io/blog/2014/04/14/hello-world/"/>
     <updated>2014-04-14T15:30:33-05:00</updated>
-    <id>http://kbarre123.github.io/blog/2014/04/14/first-post</id>
+    <id>http://kbarre123.github.io/blog/2014/04/14/hello-world</id>
     <content type="html"><![CDATA[<p>This is my first post using Octopress. I&rsquo;m still trying to get the hang of it, <em>and</em> I don&rsquo;t know markup well enough at the moment. So, let&rsquo;s give it a test-run.</p>
 
 <!-- more -->
