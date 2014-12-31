@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://kbarre123.github.io/blog/2014/12/31/which-blogging-platform-feels-best/</loc>
-    <lastmod>2014-12-31T13:11:24-06:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://kbarre123.github.io/blog/2014/09/17/friends-with-benefits/</loc>
     <lastmod>2014-09-17T17:30:22-05:00</lastmod>
     <priority>0.8</priority>
@@ -17,19 +12,19 @@
   </url>
   <url>
     <loc>http://kbarre123.github.io/blog/archives/</loc>
-    <lastmod>2014-12-31T14:16:05-06:00</lastmod>
+    <lastmod>2014-12-31T14:38:02-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://kbarre123.github.io/</loc>
-    <lastmod>2014-12-31T14:16:05-06:00</lastmod>
+    <lastmod>2014-12-31T14:38:02-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kbarre123.github.io/about/</loc>
-    <lastmod>2014-12-31T14:16:05-06:00</lastmod>
+    <lastmod>2014-12-31T14:38:02-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
