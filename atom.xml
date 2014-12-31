@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2014-12-31T14:48:58-06:00</updated>
+  <updated>2014-12-31T15:24:24-06:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -14,14 +14,36 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Which Blogging Platform Feels Best?]]></title>
+    <title type="html"><![CDATA[Updated: Which Blogging Platform Feels Best?]]></title>
     <link href="http://kbarre123.github.io/blog/2014/12/31/which-blogging-platform-feels-best/"/>
     <updated>2014-12-31T13:11:24-06:00</updated>
     <id>http://kbarre123.github.io/blog/2014/12/31/which-blogging-platform-feels-best</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m trying to figure out exactly which platform suits me best, WordPress (WP) or GitHub Pages (GP).</p>
+    <content type="html"><![CDATA[<p>A comparision of WordPress and Octopress as seen my a moron.</p>
 
 <!-- more -->
 
+
+<p>Well, as advertised, I attempted to recreate this blog post using Octopress (OP) in an attempt to compare the two blogging experiences. Initially, after reviewing my notes, the process seemed straight-forward.</p>
+
+<ul>
+<li>Run a rake-task that generates a new post (and all the trappings that accompany it).</li>
+<li>Copy this post into the markdown file</li>
+<li>Run a rake-task to generate the necessary files. Here you can run a rake-task to preview the site locally.</li>
+<li>Run a rake-task to push to GitHub Pages.</li>
+<li>Commit all the new changes to GitHub &amp; push to my branch.</li>
+<li>Done.</li>
+</ul>
+
+
+<p>I nailed the first two steps. I mean, totally nailed it -__- . What proceed to unfold was a journey through StackOverflow, scouring the Octopress docs, and blindly shredding my local repo with <code>git merges</code>, <code>reset --hard HEAD</code>&rsquo;s and the like. The issue was that I performed step 5 after step 2. It&rsquo;s that easy. Let me be clear; I screwed it up. Octopress had nothing to do with it. It really is simple and in many ways superior to WordPress (WP), but I&rsquo;m an idiot and can&rsquo;t follow directions very well.</p>
+
+<p><strong> Conclusion </strong></p>
+
+<p>All in all, I really do enjoy the Octopress experience. I love interacting with my computer with the command-line and I love writing in Sublime Text 3. I think I need some more practice with Octopress so I&rsquo;m going to go with that format for now. Case closed.</p>
+
+<p><strong> Original Post </strong></p>
+
+<p>I&rsquo;m trying to figure out exactly which platform suits me best, WordPress (WP) or GitHub Pages (GP).</p>
 
 <p>WP is so easy to crank out a quick post and there&rsquo;s tons of 3rd party support/widgets/plugins. It satisfies the &ldquo;I should blog more but I don&rsquo;t have anything to say really&hellip;but I&rsquo;m going to write a quick post anyways&rdquo; side of me. Disclaimer: this post is of the aforementioned variety :)</p>
 
