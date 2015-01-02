@@ -6,30 +6,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://kbarre123.github.io/blog/2014/09/17/friends-with-benefits/</loc>
-    <lastmod>2014-09-17T17:30:22-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://kbarre123.github.io/blog/2014/04/14/hello-world/</loc>
     <lastmod>2014-04-14T15:30:33-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://kbarre123.github.io/blog/archives/</loc>
-    <lastmod>2015-01-02T16:04:36-06:00</lastmod>
+    <lastmod>2015-01-02T16:43:53-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://kbarre123.github.io/</loc>
-    <lastmod>2015-01-02T16:04:36-06:00</lastmod>
+    <lastmod>2015-01-02T16:43:53-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://kbarre123.github.io/about/</loc>
-    <lastmod>2015-01-02T16:04:36-06:00</lastmod>
+    <lastmod>2015-01-02T16:43:53-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
