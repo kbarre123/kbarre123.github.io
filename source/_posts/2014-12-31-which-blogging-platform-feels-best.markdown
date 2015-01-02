@@ -1,13 +1,32 @@
 ---
 layout: post
-title: "Which blogging platform feels best?"
+title: "Updated: Which blogging platform feels best?"
 date: 2014-12-31 13:11:24 -0600
 comments: true
 categories: [General]
 ---
 
-I'm trying to figure out exactly which platform suits me best, WordPress (WP) or GitHub Pages (GP).
+A comparision of WordPress and Octopress as seen my a moron.
 <!-- more -->
+
+Well, as advertised, I attempted to recreate this blog post using Octopress (OP) in an attempt to compare the two blogging experiences. Initially, after reviewing my notes, the process seemed straight-forward.
+
+* Run a rake-task that generates a new post (and all the trappings that accompany it).
+* Copy this post into the markdown file
+* Run a rake-task to generate the necessary files. Here you can run a rake-task to preview the site locally.
+* Run a rake-task to push to GitHub Pages.
+* Commit all the new changes to GitHub & push to my branch.
+* Done.
+
+I nailed the first two steps. I mean, totally nailed it -__- . What proceed to unfold was a journey through StackOverflow, scouring the Octopress docs, and blindly shredding my local repo with `git merges`, `reset --hard HEAD`'s and the like. The issue was that I performed step 5 after step 2. It's that easy. Let me be clear; I screwed it up. Octopress had nothing to do with it. It really is simple and in many ways superior to WordPress (WP), but I'm an idiot and can't follow directions very well.
+
+** Conclusion **
+
+All in all, I really do enjoy the Octopress experience. I love interacting with my computer with the command-line and I love writing in Sublime Text 3. I think I need some more practice with Octopress so I'm going to go with that format for now. Case closed.
+
+** Original Post **
+
+I'm trying to figure out exactly which platform suits me best, WordPress (WP) or GitHub Pages (GP).
 
 WP is so easy to crank out a quick post and there's tons of 3rd party support/widgets/plugins. It satisfies the "I should blog more but I don't have anything to say really...but I'm going to write a quick post anyways" side of me. Disclaimer: this post is of the aforementioned variety :)
 
