@@ -3,7 +3,7 @@ layout: post
 title: "Updated: Which blogging platform feels best?"
 date: 2014-12-31 13:11:24 -0600
 comments: true
-categories: [General]
+categories: General
 ---
 
 A comparision of WordPress and Octopress as seen my a moron.
