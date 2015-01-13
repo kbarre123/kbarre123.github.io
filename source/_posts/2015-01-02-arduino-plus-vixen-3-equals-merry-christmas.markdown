@@ -23,11 +23,11 @@ Now that I've mentioned Arduino and Vixen, it's probably a good time to explain 
 
 ** Software That's Free (As In Beer AND Freedom) **
 
-Vixen (unfortunately) only runs on Windows. It also depends on a specific version of the .NET framework (which it'll probably have to download) as well as Java, so sit back and watch the LOTR trillogy whilst it downloads. Once installed and opened, you'll have to set up a 'display', which serves as a software representation of your actual light display. Each element of your display has to be mapped to a 'channel' of the software. Think of an element as the smallest, stand-alone unit of your display (e.g. a tree wrapped with lights or each post on your front-porch). An element can be independently turned on and off, or grouped together in an arbitrary manner (e.g. if each bush is an element, you can group all bushes into a 'bushes' group or group each post into a 'posts' group).
+Vixen (unfortunately) only runs on Windows. It also depends on a specific version of the .NET framework (which it'll probably have to download) as well as Java, so sit back and watch the LOTR trilogy whilst it downloads. Once installed and opened, you'll have to set up a 'display', which serves as a software representation of your actual light display. Each element of your display has to be mapped to a 'channel' of the software. Think of an element as the smallest, stand-alone unit of your display (e.g. a tree wrapped with lights or each post on your front-porch). An element can be independently turned on and off, or grouped together in an arbitrary manner (e.g. if each bush is an element, you can group all bushes into a 'bushes' group or group each post into a 'posts' group).
 
 {% imgcap /images/2015-01-02_vixen/vixen_channel_map.PNG Figure 2: Mapping of display elements to software "channel" %} 
 
-First, import an mp3 into Vixen. It'll generate a waveform, giving you visual clues as to what's going on in the song. I also used [Audacity](http://audacity.sourceforge.net/) to analyze the mp3 and exported an XML file with the "down-beats" of the song (i.e. the first beat of the measure). After importing that file into Vixen, an overlay of those beat-marks are shown on the project timeline (see Figure 1 below; the yellow lines are from the Audacity file). This is all in an attempt to get the lights flashing at the right time.
+First, import an mp3 into Vixen. It'll generate a waveform, giving you visual clues as to what's going on in the song. I also used [Audacity](http://audacity.sourceforge.net/) to analyze the mp3 and exported an XML file with the "down-beats" of the song (i.e. the first beat of the measure). After importing that file into Vixen, an overlay of those beat-marks are shown on the project time-line (see Figure 1 below; the yellow lines are from the Audacity file). This is all in an attempt to get the lights flashing at the right time.
 
 {% imgcap /images/2015-01-02_vixen/vixen_overview.PNG Figure 1: Vixen project view %}
 
@@ -112,12 +112,12 @@ Many thanks to Scott Shaver for all of the great [videos](https://www.youtube.co
 
 The hardware components I used are as follows:
 
-* A used electiral service box (like one you'd find on a construction site; they're water-resistant).
+* A used electrical service box (like one you'd find on a construction site; they're water-resistant).
 * An [Arduino Uno r3] or equivalent. As long as there's at least 16 digital I/O ports.
 * Two [Sainsmart 8 channel 5V Solid State Relay](http://www.sainsmart.com/8-channel-5v-solid-state-relay-module-board-omron-ssr-4-pic-arm-avr-dsp-arduino.html) (SSR) boards. At the time of publication, these were listed as $28.59...I paid maybe half of that. Shop around.
 * 5' of Romex wire and a bag of 3-way jumpers
 * 16 indoor/outdoor extension cords
-* 2' of 22 guage jumper wire to connect the Arduino to the SSR units.
+* 2' of 22 gage jumper wire to connect the Arduino to the SSR units.
 * A small screwdriver and a regular sized screwdriver (no soldering, yay!).
 * A piece of plexi-glass, some machine screws, and nylon risers
 
@@ -135,7 +135,7 @@ Again, I used an Arduino Uno R3, but any microcontroller with at least 16 digita
 
 **** The SSRs ****
 
-In Figure 3, you'll notice that the extension cords and 110V supply (orange extension cord) enter the box through the ports on the right. In Figure 4, you can see them running behind the SSRs and that there's 3 brass screws at the top and bottom of the picture. Those screws (along with nylon risers) support the plexi-glass to which the Arduino and SSRs are mounted (they themselves on risers to allow for cooling), giving the extension cords room to run to the top of the box and tie in to the power-supply-bar (where the incomming 110V supply is distributed amongst all 16 channels that feed the lights). As you can see, there are 8 channels on each board. The sides closest to the Arduino are connected, with 22 guage wire, to the digital I/O pins of the Arduino. The sides closes to the outside edge of the photo are connected to 110V with Romex wire and orange 3-way jumpers.
+In Figure 3, you'll notice that the extension cords and 110V supply (orange extension cord) enter the box through the ports on the right. In Figure 4, you can see them running behind the SSRs and that there's 3 brass screws at the top and bottom of the picture. Those screws (along with nylon risers) support the plexi-glass to which the Arduino and SSRs are mounted (they themselves on risers to allow for cooling), giving the extension cords room to run to the top of the box and tie in to the power-supply-bar (where the incoming 110V supply is distributed amongst all 16 channels that feed the lights). As you can see, there are 8 channels on each board. The sides closest to the Arduino are connected, with 22 gage wire, to the digital I/O pins of the Arduino. The sides closes to the outside edge of the photo are connected to 110V with Romex wire and orange 3-way jumpers.
 
 One thing to keep in mind with these SSRs is that each channel has an max amperage that you can run through it (this  model is 2mA I believe). At the most, I've been able to chain 6 strands of lights together without blowing one of the relays. I know this because I've blown one out by running 7 strands chained together off of one channel. Each strand should have a silver/gold tag near one of the plugs that denotes the total amps for that strand (somewhere in the ballpark of 0.34mA). So, 6 x 0.34mA = 2.04mA, *just* over the 2mA specs of the relay.
 
@@ -149,6 +149,6 @@ Ultimately, what's happening here is as the Arduino receives instructions from V
 
 {% imgcap /images/2015-01-02_vixen/house_lights.jpg Figure 6: Finished Product %}
 
-All in all, it took me about 15 hours to stumble my way through the assembly of the box (I spent maybe $60 max), configure the software, write the Arduino sketch and throw together 4 coreagraphed sequences for a show that lasts around 10 minutes. I also ran two book-shelf speakers to the front porch, went out from the headphones port on my PC to a 100W receiver and cranked up the volume. Another great feature of Vixen is that you can schedule your shows so as long as the PC and stero are on, you can set it and forget it. I had mine play every night from 5:00 - 9:30, starting every minutes. In between shows, I played a "dummy" sequence that just turned the lights on randomly but no music.
+All in all, it took me about 15 hours to stumble my way through the assembly of the box (I spent maybe $60 max), configure the software, write the Arduino sketch and throw together 4 choreographed sequences for a show that lasts around 10 minutes. I also ran two book-shelf speakers to the front porch, went out from the headphones port on my PC to a 100W receiver and cranked up the volume. Another great feature of Vixen is that you can schedule your shows so as long as the PC and stereo are on, you can set it and forget it. I had mine play every night from 5:00 - 9:30, starting every minutes. In between shows, I played a "dummy" sequence that just turned the lights on randomly but no music.
 
-Check out my repositories on Github for further details on the software if you need some guidance (links in the righthand aside of the page). Happy making!
+Check out my repositories on Github for further details on the software if you need some guidance (links in the right-hand aside of the page). Happy making!
