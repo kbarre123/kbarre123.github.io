@@ -4,6 +4,8 @@ title: "Arduino + Vixen 3 = Merry Christmas"
 date: 2015-01-02 17:27:59 -0600
 comments: true
 categories: Make
+keywords: arduino, vixen, sainsmart, christmas, automation, maker
+description: build automated christmas lights display, vixen lights software, arduino vixen lights
 ---
 
 Here's how I took an Arduino Uno, some FOSS software, and created a Winter Wonderland.

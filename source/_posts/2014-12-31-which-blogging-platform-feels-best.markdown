@@ -4,6 +4,8 @@ title: "Updated: Which blogging platform feels best?"
 date: 2014-12-31 13:11:24 -0600
 comments: true
 categories: General
+keywords: octopress, wordpress
+description: octopress vs wordpress, blogging tools
 ---
 
 A comparision of WordPress and Octopress as seen my a moron.

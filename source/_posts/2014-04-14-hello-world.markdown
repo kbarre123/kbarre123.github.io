@@ -4,6 +4,8 @@ title: "Hello World"
 date: 2014-04-14 15:30:33 -0500
 comments: true
 categories: General
+keywords: markdown
+description: github markdown, octopress
 ---
 
 This is my first post using Octopress. I'm still trying to get the hang of it, *and* I don't know markup well enough at the moment. So, let's give it a test-run.
