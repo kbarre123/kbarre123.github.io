@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2015-01-05T14:36:42-06:00</updated>
+  <updated>2015-01-12T18:29:32-06:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -12,6 +12,72 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Analysis of the DS18B20 Waterproof Temperature Sensor... And Beer]]></title>
+    <link href="http://kbarre123.github.io/blog/2015/01/06/temp-sensor-analysis/"/>
+    <updated>2015-01-06T01:18:36-06:00</updated>
+    <id>http://kbarre123.github.io/blog/2015/01/06/temp-sensor-analysis</id>
+    <content type="html"><![CDATA[<p>Brewing beer is a science, and scientists need accurate measurements. Enter the DS18B20 waterproof temperature sensor. Here, I take a look at exactly how accurate it is and how to apply it in the science of beer brewing.</p>
+
+<!-- more -->
+
+
+
+
+<!--
+* Intro
+* Background; why we need accurate temp measurements (e.g. Berliner Weiss)
+* Hardware setup (KISS)
+* Analysis (ambient & boil)
+* Conclusion
+-->
+
+
+<p>I love to make stuff. My friend Matt and I have been making beer for the last 2 years. We&rsquo;ve tried a dozen or so recipes, and they all kinda call for the same procedures to be performed:</p>
+
+<ul>
+<li>soak your grains in hot water (~173°F) for an hour in a container (or &lsquo;mash tun&rsquo;)</li>
+<li>drain that (now considered &lsquo;wort&rsquo;) off of the grains</li>
+<li>boil the wort for an hour, adding certain hops at certain times to achieve certain flavors</li>
+<li>cool it down and add certain yeast</li>
+<li>let it sit for a few weeks</li>
+<li>drink</li>
+<li>repeat</li>
+</ul>
+
+
+<p>We&rsquo;ve had, what I consider to be, considerable success. Even the worst beer we&rsquo;ve made is still better than (insert domestic swill brand name here). But this post isn&rsquo;t about making beer, it&rsquo;s about making our own tools to improve the process.</p>
+
+<p><strong><strong> Our Needs Have Changed </strong></strong></p>
+
+<p>As I said earlier, the past dozen or so recipes have called for the same actions. However, Matt found a recipe for <a href="http://en.wikipedia.org/wiki/Berliner_Weisse">Berliner Weisse</a>, a light sour beer from Northern Germany dating back to around the 16th century. Having really enjoyed my exposure to it in the past, we decided that we&rsquo;d brew it on the next brew-day. The problem was, the way the wort is prepared for a Berliner Weisse is quite different from how one would prepare, say, an ale. See, you never really boil the wort. So, what was once &ldquo;Turn on the burner full blast until she&rsquo;s at a full roll!&rdquo; has become &ldquo;How in the hell are we going to keep 10 gallons of fluid an exact temperature using just a propane burner?&rdquo;. Enter the <a href="http://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html">DS18B20 waterproof temperature sensor</a>!</p>
+
+<p><strong><strong> The Hardware </strong></strong></p>
+
+<p>The DS18B20 (henceforth referred to as &lsquo;the sensor&rsquo;) can be purchased in a waterproof, 6&#8217; &lsquo;probe&rsquo; form factor, which is exactly what we needed. I planned on using this with an <a href="http://arduino.cc/en/Main/arduinoBoardMega">Arduino Mega</a> and a <a href="http://www.sainsmart.com/sainsmart-3-2-tft-lcd-display-touch-panel-pcb-adapter-sd-slot-for-arduino-2560.html">TFT touch-screen display</a> so we could have our temp readings display on a little screen mounted on our brew-cabinet. The other cool thing is that the sensor conforms to the <a href="http://www.maximintegrated.com/en/products/comms/one-wire.html">1-Wire protocol</a>, which means that multiple sensors can be chained together on one data wire and only take up a single I/O port on the Arduino. So, I ordered two: one for the mash tun and another for the boil-pot. Once they came in the mail, I slapped together a <a href="https://github.com/kbarre123/Arduino/tree/master/Temperature/DS18B20">quick sketch</a> to test them out.</p>
+
+<p><strong><strong> Analysis </strong></strong></p>
+
+<p>After letting them do their thing for a few minutes, I noticed that one of the two always read slightly lower than the other. I swapped their position in the circuit and got the same results. I&rsquo;ll call the lower one &lsquo;Sensor B&rsquo;. Well, one of them has to be (more) right, but how to tell which one? So, I let them run for a couple of hours, logging their result to the Serial monitor. I then imported that data into <a href="http://www.libreoffice.org/discover/calc/">LibreOffice Calc</a> and plotted their readings over time. This is what I came up with:</p>
+
+<p><span class='caption-wrapper'><img class='caption' src='http://kbarre123.github.io/images/2015-01-06_sensor/ds18b20_sensor_variance_analysis.png' width='' height='' title='Figure 1: Ambient Temperature Readings'><span class='caption-text'>Figure 1: Ambient Temperature Readings</span></span></p>
+
+<p>As you can see from the first half of Fig. 1, the two sensors tracked each other most of the time. And my suspicions were confirmed: Sensor B is always &lsquo;colder&rsquo; than Sensor A. The second half of Fig. 1 shows the variance b/t the two. The variance average was 1.35°F during the flat parts of the graph, and varied ±1°F from that during the &lsquo;spikes&rsquo;. Another important thing that this graph shows us is, around 886 seconds, both temperatures spike upwards and the variance plumets to less than 0.5°F. This is when I was holding the two sensor ends together so I could wrap a bread-tie around them to ensure that they were close to each other and experiencing the same temperature fluctuations as best I could. This was a clear sign that I had to reperform the test again, but under &lsquo;real-life&rsquo; conditions&hellip;in some hot-ass liquid.</p>
+
+<p><span class='caption-wrapper'><img class='caption' src='http://kbarre123.github.io/images/2015-01-06_sensor/hot_ass_liquid.JPG' width='' height='' title='Figure 2: Hot-Ass Liquid'><span class='caption-text'>Figure 2: Hot-Ass Liquid</span></span></p>
+
+<p>I let the sensors run as the water heated, and kept them running for about 10 minutes after the water began to boil. Here&rsquo;s what I saw:</p>
+
+<p><span class='caption-wrapper'><img class='caption' src='http://kbarre123.github.io/images/2015-01-06_sensor/ds18b20_sensor_variance_analysis_boil.png' width='' height='' title='Figure 3: Hot-Ass Liquid Temperature Readings'><span class='caption-text'>Figure 3: Hot-Ass Liquid Temperature Readings</span></span></p>
+
+<p>We can see that, under much higher temperatures, the two probes still tend to trach each other nicely. They both level off around 212°F as we&rsquo;d expect. The maximum recorded for Probes A &amp; B were 215.6°F and 214.25°F respectively. Unforunately, the average difference is now 1.74°F, an increase of 0.39°F from the last experiment&rsquo;s average difference.</p>
+
+<p><strong><strong> Conclusion </strong></strong></p>
+
+<p>All in all, with an advertised operating range of -55°C to +125°C and an accuracy of ±0.5°C from -10°C to +85°C, its hard to say whether or not thse sensors are faulty. For the use-case for which they were purchased, 2°F variance isn&rsquo;t going to ruin anything. At $9.95 a pop, I guess the moral of the story is &ldquo;You get what you pay for&rdquo;. And it ain&rsquo;t all that bad.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arduino + Vixen 3 = Merry Christmas]]></title>
