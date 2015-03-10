@@ -4,7 +4,7 @@
   <title><![CDATA[kbarre123]]></title>
   <link href="http://kbarre123.github.io/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2015-03-10T16:56:56-05:00</updated>
+  <updated>2015-03-10T17:12:14-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -23,7 +23,7 @@
 <!-- more -->
 
 
-<p>The convenience of installing software through the Ubuntu Software Center is that you&rsquo;ll receive updates via <code>$ sudo apt-get update; sudo apt-get upgrade</code>, along with the fact that all of the behind-the-scenes work of adding the program to your system&rsquo;s menu is handled for you. The down-side is, at the time of publication, the version of the Arduino IDE offered by the Software Center was 1.0.5+dfsg2-2. That bad-boy was last updated January 8, 2014, which was about 14 months and 20 releases ago. Granted, I&rsquo;ve been using that build since it came out and have never had any issues with it at all, but it was time for an upgrade to the latest and greatest.</p>
+<p>The convenience of installing software through the Ubuntu Software Center is that you&rsquo;ll receive updates via <code>$ sudo apt-get update; sudo apt-get upgrade</code>, along with the fact that all of the behind-the-scenes work of adding the program to your system&rsquo;s menu is handled for you. The down-side is, at the time of publication, the version of the Arduino IDE offered by the Software Center was 1.0.5+dfsg2-2. That bad-boy was last updated January 8, 2014, which is about 14 months and 20 releases ago. Granted, I&rsquo;ve been using that build since it came out and have never had any issues with it at all, but it was time for an upgrade to the latest and greatest.</p>
 
 <h2>Step #1</h2>
 
