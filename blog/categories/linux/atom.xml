@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | kbarre123]]></title>
+  <link href="http://kbarre123.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://kbarre123.github.io/"/>
+  <updated>2015-03-10T16:56:56-05:00</updated>
+  <id>http://kbarre123.github.io/</id>
+  <author>
+    <name><![CDATA[K.C. Barrett]]></name>
+    <email><![CDATA[kbarre123@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Building the Arduino IDE From Source and Launching It From the Applications Menu on Linux Ubuntu]]></title>
+    <link href="http://kbarre123.github.io/blog/2015/03/10/building-the-arduino-ide-from-source-and-launching-it-from-the-applications-menu/"/>
+    <updated>2015-03-10T13:09:33-05:00</updated>
+    <id>http://kbarre123.github.io/blog/2015/03/10/building-the-arduino-ide-from-source-and-launching-it-from-the-applications-menu</id>
+    <content type="html"><![CDATA[<p>Ubuntu is great, but their Software Center doesn&rsquo;t always offer the most up-to-date builds. Here&rsquo;s step-by-step instructions on building the Arduino IDE from source and adding it to the Applications menu for easy launching.</p>
+
+<!-- more -->
+
+
+<p>The convenience of installing software through the Ubuntu Software Center is that you&rsquo;ll receive updates via <code>$ sudo apt-get update; sudo apt-get upgrade</code>, along with the fact that all of the behind-the-scenes work of adding the program to your system&rsquo;s menu is handled for you. The down-side is, at the time of publication, the version of the Arduino IDE offered by the Software Center was 1.0.5+dfsg2-2. That bad-boy was last updated January 8, 2014, which was about 14 months and 20 releases ago. Granted, I&rsquo;ve been using that build since it came out and have never had any issues with it at all, but it was time for an upgrade to the latest and greatest.</p>
+
+<h2>Step #1</h2>
+
+<p>Check and see which version the Ubuntu Software Center is currently offering. If its something you can live with, install it through the Software Center and move on with your life. If its not the one you want, proceed to step #2.</p>
+
+<pre><code class="bash Check the version offered through the Ubuntu Software Center">kcb@ubuntu$ apt-cache show arduino
+Package: arduino
+Priority: optional
+Section: universe/electronics
+Installed-Size: 1687
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;
+Original-Maintainer: Scott Howard &lt;showard@debian.org&gt;
+Architecture: all
+Version: 1:1.0.5+dfsg2-2
+Depends: default-jre | java6-runtime, libjna-java, librxtx-java (&gt;= 2.2pre2-3), arduino-core (= 1:1.0.5+dfsg2-2)
+Recommends: extra-xdg-menus, policykit-1
+Filename: pool/universe/a/arduino/arduino_1.0.5+dfsg2-2_all.deb
+Size: 1164058
+MD5sum: 1c49d26126aee347d8dbe7bb5ad63310
+SHA1: bfc32edd8a7d9d77cc2f3494fdd8800218bba13f
+SHA256: 6119224929dc0577199c1b32cc3a65b0c3a7c10339fa9f51237e1192dff6c49e
+Description-en: AVR development board IDE and built-in libraries
+ Arduino is an open-source electronics prototyping platform based on
+ flexible, easy-to-use hardware and software. It's intended for artists,
+ designers, hobbyists, and anyone interested in creating interactive
+ objects or environments.
+ .
+ This package will install the integrated development environment that
+ allows for program writing, code verification, compiling, and uploading
+ to the Arduino development board. Libraries and example code will also
+ be installed.
+Description-md5: 60f8f72e8783c6b5a72254120b680cdb
+Homepage: http://www.arduino.cc
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+kcb@ubuntu$
+</code></pre>
+
+<p>Here we see that they&rsquo;re still offering the incredibly old <code>Version: 1:1.0.5+dfsg2-2</code>, so we&rsquo;ll move on to step #2.</p>
+
+<h2>Step #2</h2>
+
+<p>Find the source files for the version that you <em>do</em> want. The current Arduino IDE source files can be found on their <a href="http://www.arduino.cc/en/Main/Software">homepage</a>. <em>Sidebar: there&rsquo;s recently been a rift amongst the founders of the Arduino organization. Be sure you&rsquo;re on the &lsquo;.cc&rsquo; domain and not the &lsquo;.org&rsquo;.</em> Based on your system&rsquo;s architecture, download the appropriate file (e.g. 32 vs 64 bit).</p>
+
+<h2>Step #3</h2>
+
+<p>Assuming that you&rsquo;re already located in your <code>$HOME</code> directory, move the file you just downloaded (probably in <code>~/Downloads</code> :D) to your <code>$HOME</code> directory and extract it. <em>Don&rsquo;t forget to ditch the archive after you extract it, you won&rsquo;t be needing it any more.</em></p>
+
+<pre><code class="bash Move the archive to your $HOME directory and extract it">kcb@ubuntu$ mv ~/Downloads/arduino-1.6.1-linux64.tar.xz .
+kcb@ubuntu$ tar -xf arduino-1.6.1-linux64.tar.xz
+kcb@ubuntu$ ls -l | grep arduino
+-rw-rw-r--  1 kcb kcb 61284080 Mar 10 12:37 arduino-1.6.1-linux64.tar.xz
+drwxrwxr-x  8 kcb kcb     4096 Mar 10 12:51 arduino-1.6.1
+kcb@ubuntu$ rm arduino-1.6.1-linux64.tar.xz
+kcb@ubuntu$
+</code></pre>
+
+<h2>Step #4</h2>
+
+<p>If you don&rsquo;t mind <code>cd</code>-ing into the <code>~/arduino-1.6.1</code> directory and running <code>bash arduino</code> every time you want to launch the program, you can stop here. For those of you who are a little more lazy like myself, we&rsquo;ll next be creating an application launcher. <em>Note: I&rsquo;m currently using Ubuntu 14.04.1 LTS with Gnome Flashback Metacity. The file locations may differ slightly depending on which distribution/desktop environment you&rsquo;re using&hellip;but you&rsquo;ll figure it out.</em></p>
+
+<p>First, create the file <code>/usr/share/applications/arduino.desktop</code> and include the following information therein.</p>
+
+<pre><code class="bash Contents of arduino.desktop file">[Desktop Entry]
+Name=Arduino
+Comment=Create physical computing projects
+Exec=/home/username/arduino-1.6.1/arduino
+Icon=/home/username/arduino-1.6.1/lib/arduino_icon.ico
+Categories=Development;Engineering;Electronics;
+Version=1.0
+Type=Application
+Terminal=false
+</code></pre>
+
+<h2>Step #5</h2>
+
+<p>You&rsquo;ve got to make your new file executable, so&hellip;</p>
+
+<pre><code class="bash Make arduino.desktop executable">kcb@ubuntu$ chmod +x arduino.desktop
+</code></pre>
+
+<h2>Step #6</h2>
+
+<p>Finally, you just need to check to see if the application launcher file is free from errors.</p>
+
+<pre><code class="bash Check the validity of your new application launcher file">kcb@ubuntu$ desktop-file-validate /usr/share/applications/arduino.desktop
+kcb@ubuntu$
+</code></pre>
+
+<p>If no errors are returned and you get back a ready command-prompt, you&rsquo;re in business.</p>
+
+<h2>Done!</h2>
+
+<p>That&rsquo;s it. You should now be able to browse to <code>Applications/Programming/Arduino</code> from the panel up top and the Arduino IDE should fire right up. No longer are you bound to the crusty old releases in the Ubuntu Software Center!</p>
+]]></content>
+  </entry>
+  
+</feed>
