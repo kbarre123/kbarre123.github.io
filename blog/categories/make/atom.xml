@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Make | kbarre123]]></title>
   <link href="http://kbarre123.github.io/blog/categories/make/atom.xml" rel="self"/>
   <link href="http://kbarre123.github.io/"/>
-  <updated>2015-03-10T17:12:14-05:00</updated>
+  <updated>2015-03-13T10:52:08-05:00</updated>
   <id>http://kbarre123.github.io/</id>
   <author>
     <name><![CDATA[K.C. Barrett]]></name>
@@ -14,27 +14,17 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Analysis of the DS18B20 Waterproof Temperature Sensor... And Beer]]></title>
+    <title type="html"><![CDATA[Updated: Analysis of the DS18B20 Waterproof Temperature Sensor... And Beer]]></title>
     <link href="http://kbarre123.github.io/blog/2015/01/06/temp-sensor-analysis/"/>
     <updated>2015-01-06T01:18:36-06:00</updated>
     <id>http://kbarre123.github.io/blog/2015/01/06/temp-sensor-analysis</id>
-    <content type="html"><![CDATA[<p>Brewing beer is a science, and scientists need accurate measurements. Enter the DS18B20 waterproof temperature sensor. Here, I take a look at exactly how accurate it is and how to apply it in the science of beer brewing.</p>
+    <content type="html"><![CDATA[<p><strong>Update:</strong> I converted the graphs into <a href="http://plot.ly">Plot.ly</a> graphs and boy are they awesome! Here&rsquo;s the <a href="https://gist.github.com/kbarre123/9f2696d12ac868bcebab">gist</a> for the Python code used to create this graph. Oh, and all of the Python coding was done with <a href="http://ipython.org/">IPython</a>. If you&rsquo;re not using it, you&rsquo;re crazy!</p>
 
 <!-- more -->
 
 
-
-
-<!--
-* Intro
-* Background; why we need accurate temp measurements (e.g. Berliner Weiss)
-* Hardware setup (KISS)
-* Analysis (ambient & boil)
-* Conclusion
--->
-
-
-<p>I love to make stuff. My friend Matt and I have been making beer for the last 2 years. We&rsquo;ve tried a dozen or so recipes, and they all kinda call for the same procedures to be performed:</p>
+<p>Brewing beer is a science, and scientists need accurate measurements. Enter the DS18B20 waterproof temperature sensor. Here, I take a look at exactly how accurate it is and how to apply it in the science of beer brewing.
+I love to make stuff. My friend Matt and I have been making beer for the last 2 years. We&rsquo;ve tried a dozen or so recipes, and they all kinda call for the same procedures to be performed:</p>
 
 <ul>
 <li>soak your grains in hot water (~173°F) for an hour in a container (or &lsquo;mash tun&rsquo;)</li>
@@ -62,6 +52,14 @@
 <p>After letting them do their thing for a few minutes, I noticed that one of the two always read slightly lower than the other. I swapped their position in the circuit and got the same results. I&rsquo;ll call the lower one &lsquo;Sensor B&rsquo;. Well, one of them has to be (more) right, but how to tell which one? So, I let them run for a couple of hours, logging their result to the Serial monitor. I then imported that data into <a href="http://www.libreoffice.org/discover/calc/">LibreOffice Calc</a> and plotted their readings over time. This is what I came up with:</p>
 
 <p><span class='caption-wrapper'><img class='caption' src='/images/2015-01-06_sensor/ds18b20_sensor_variance_analysis.png' width='' height='' title='Figure 1: Ambient Temperature Readings'><span class='caption-text'>Figure 1: Ambient Temperature Readings</span></span></p>
+
+<p><strong>Update:</strong> I used this same data, but generated the first graph using Python and <a href="http://plot.ly">Plot.ly</a>. Can you tell the difference?</p>
+
+<div>
+    <a href="https://plot.ly/~kbarre123/153/" target="_blank" title="Temp Sensor Data" style="display: block; text-align: center;"><img src="https://plot.ly/~kbarre123/153.png" alt="Temp Sensor Data" style="max-width: 100%;width: 1152px;"  width="1152" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="kbarre123:153" src="https://plot.ly/embed.js" async></script>
+</div>
+
 
 <p>As you can see from the first half of Fig. 1, the two sensors tracked each other most of the time. And my suspicions were confirmed: Sensor B is always &lsquo;colder&rsquo; than Sensor A. The second half of Fig. 1 shows the variance b/t the two. The variance average was 1.35°F during the flat parts of the graph, and varied ±1°F from that during the &lsquo;spikes&rsquo;. Another important thing that this graph shows us is, around 886 seconds, both temperatures spike upwards and the variance plumets to less than 0.5°F. This is when I was holding the two sensor ends together so I could wrap a bread-tie around them to ensure that they were close to each other and experiencing the same temperature fluctuations as best I could. This was a clear sign that I had to reperform the test again, but under &lsquo;real-life&rsquo; conditions&hellip;in some hot-ass liquid.</p>
 
